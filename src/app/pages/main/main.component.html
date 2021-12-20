@@ -1,0 +1,114 @@
+<header #headerel class="header container" [ngClass]="{'header--scrolled': scrolled == true} " tabindex="0" aria-label="header"> 
+  <div class="header__brandingLogo" tabindex="0" aria-label="brand Logo" (click)="naviGateHome()">
+    <img class="header__brandImg" src="assets/images/branding.png">
+  </div>
+  <div class="header__usrProfile">
+    <div class="header__languageSelectorBox" tabindex="0" aria-label="language Selector">
+      <img class="header__languageSelectorImg" src="assets/images/flag.png">
+    </div>
+    <i class="header__avatar small material-icons" tabindex="0" aria-label="user profile">account_circle</i>
+  </div>
+  
+</header>
+
+<div class="mainBanner">
+  <div class="mainBanner__bannerContainer custom--shadow">
+    <img class="mainBanner__bannerImg" src="assets/images/ban3.jpg">
+    <div class="mainBanner__content container">
+      <h1 class="h1 mainBanner__title mainBanner--titleStyle" tabindex="0"  >Best Flying Experience</h1>
+      <p class="mainBanner__subTitle" tabindex="0" >Come Experience the best flying experience.</p>
+    </div>
+  </div>
+</div>
+
+<div class="bookingWidget container">
+  <div class="bookingWidget__bwContainer custom--shadow">
+    <div class="row m-0 bookingWidget--desktopDisplay">
+        <div class="col-6 col-lg-3 bookingWidget__bwFlights bookingWidget--item border--right border--bottom">
+          <i class="bookingWidget__avatar small material-icons">airplanemode_active</i>
+          <p class="bookingWidget__itemText m-0" tabindex="0" >Search Flight</p>
+          
+        </div>
+        <div class="col-6 col-lg-3 bookingWidget__bwManage bookingWidget--item border--left border--bottom">
+          <i class="bookingWidget__avatar small material-icons">loyalty</i>
+          <p class="bookingWidget__itemText m-0" tabindex="0" >Manage Booking</p>
+          </div>
+    </div>
+    <div class="row m-0 bookingWidget--desktopDisplay">
+      <div class="col-6 col-lg-3 bookingWidget__bwYourFlights bookingWidget--item border--right border--top">
+        <i class="bookingWidget__avatar small material-icons">markunread_mailbox</i>
+          <p class="bookingWidget__itemText m-0" tabindex="0" >Your Flights</p>
+        </div>
+      <div class="col-6 col-lg-3 bookingWidget__bwFlightStatus bookingWidget--item border--left border--top">
+        <i class="bookingWidget__avatar small material-icons">access_time</i>
+          <p class="bookingWidget__itemText m-0" tabindex="0" >Flights Status</p>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="sliderTeaser container">
+  <div class="sliderTeaser__box custom--shadow">
+    <div class="sliderTeaser__teaserItem sliderTeaser--hotels">
+        <div class="sliderTeaser__teaserItemBox">
+          <i class="sliderTeaser__itemAvatar small material-icons">hotel</i>
+          <p class="bookingWidget__itemText m-0 text-center" tabindex="0" >Hotels</p>
+        </div>
+    </div>
+    <div class="sliderTeaser__teaserItem sliderTeaser--hotels">
+        <div class="sliderTeaser__teaserItemBox">
+          <i class="sliderTeaser__itemAvatar small material-icons">directions_car</i>
+          <p class="bookingWidget__itemText m-0 text-center" tabindex="0" >Cars</p>
+        </div>
+    </div>
+    <div class="sliderTeaser__teaserItem sliderTeaser--hotels">
+        <div class="sliderTeaser__teaserItemBox">
+          <i class="sliderTeaser__itemAvatar small material-icons">beach_access</i>
+          <p class="bookingWidget__itemText m-0 text-center" tabindex="0" >Vacation</p>
+        </div>
+    </div>
+    <div class="sliderTeaser__teaserItem sliderTeaser--hotels">
+        <div class="sliderTeaser__teaserItemBox">
+          <i class="sliderTeaser__itemAvatar small material-icons">directions_bus</i>
+          <p class="bookingWidget__itemText m-0 text-center" tabindex="0" >Airport Bus</p>
+        </div>
+    </div>
+
+    <div class="sliderTeaser__teaserItem sliderTeaser--hotels">
+        <div class="sliderTeaser__teaserItemBox">
+          <i class="sliderTeaser__itemAvatar small material-icons">thumb_up</i>
+          <p class="bookingWidget__itemText m-0 text-center" tabindex="0" >Greet</p>
+        </div>
+    </div>
+    <div class="sliderTeaser__teaserItem sliderTeaser--hotels">
+        <div class="sliderTeaser__teaserItemBox">
+          <i class="sliderTeaser__itemAvatar small material-icons">insert_emoticon</i>
+          <p class="bookingWidget__itemText m-0 text-center" tabindex="0" >Driver</p>
+        </div>
+    </div>
+    
+
+  </div>
+</div>
+
+<div class="privilegeClub">
+  <div class="privilegeClub__box container">
+    <img class="privilegeClub__img" src="assets/images/privilegeClub.png">
+    <div class="privilegeClub__content">
+      <h3 class="privilegeClub__text text-white" tabindex="0">
+        We have custom offers for privilege club memebers lik you.
+      </h3>
+      <button class="privilegeClub_getOffer btn btn-light" (click)="genAuthtoken()">
+        Get my Offers
+      </button>
+    </div>
+  </div>
+  
+</div>
+
+
+<p>
+  
+  <!-- <a class="waves-effect waves-light btn" (click)="genAuthtoken()">Generate AuthToken</a> -->
+  <!-- <a class="waves-effect waves-light btn" (click)="getOffers()">getOffers</a> -->
+</p>

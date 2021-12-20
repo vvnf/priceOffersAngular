@@ -1,0 +1,129 @@
+<header #headerel class="header container" [ngClass]="{'header--scrolled': scrolled == true} " tabindex="0" aria-label="header"> 
+  <div class="header__brandingLogo" tabindex="0" aria-label="brand Logo" (click)="naviGateHome()">
+    <img class="header__brandImg" src="assets/images/branding.png">
+  </div>
+  <div class="header__usrProfile">
+    <div class="header__languageSelectorBox" tabindex="0" aria-label="language Selector">
+      <img class="header__languageSelectorImg" src="assets/images/flag.png">
+    </div>
+    <i class="header__avatar small material-icons" tabindex="0" aria-label="user profile">account_circle</i>
+  </div>
+  
+</header>
+
+
+<div class="offerList custom--shadow ">
+  <h1 class="offerList__head text-center" tabindex="0" aria-label="Your Offer List" >Your Offer List</h1>
+
+<div class="offerList__box">
+  <div class="sortFilterDesktop">
+    <h3 class="sortFilterDesktop__heading text-center" tabindex="0" aria-label="Filters" >Filters</h3>
+        <div class="sortFilterDesktop__filterBy">
+          <form [formGroup]="filterInputs">
+            <label class="sortFilterDesktop__label origin--label" tabindex="0" aria-label="Select Origin City Use Up and down arrow key to select"  >Origin City</label>
+          <tag-input class="sortFilterTagOrigin"  formControlName="origin" [separatorKeyCodes]="[32,9]" placeholder="Filter By Origin" (onAdd)="filterData($event,'desktop')" (onRemove)="filterData($event,'desktop')">
+            <tag-input-dropdown class="test"
+              [autocompleteItems]="originCity"
+              [showDropdownIfEmpty]="true"
+              [dynamicUpdate]="false"
+              [keepOpen]="false"
+              
+            >
+            </tag-input-dropdown>
+          </tag-input>
+
+          <label class="sortFilterDesktop__label destinarion--label" tabindex="0" aria-label="Select Destination City Use Up and down arrow key to select">Destination City</label>
+          <tag-input class="sortFilterTagDestination"  formControlName="destination" [separatorKeyCodes]="[32,9]" placeholder="Filter By Destination" (onAdd)="filterData($event,'desktop')" (onRemove)="filterData($event,'desktop')">
+            <tag-input-dropdown
+              [autocompleteItems]="destinationCity"
+              [showDropdownIfEmpty]="true"
+              [dynamicUpdate]="false"
+              [keepOpen]="false"
+            >
+            </tag-input-dropdown>
+          </tag-input>
+
+        </form>
+        </div>
+        
+  </div>
+
+  <div *ngIf="displayData" class="offerList__container container" tabindex="0" attr.aria-label="Your Filter Result shows {{displayData.length}} entries" [@listAnimation]="displayData.length">
+    <div class="offerList__noData" [ngClass]="{'d-block': displayNodata == true} " >No Data</div>
+    <div tabindex="0" attr.aria-label="Result Number {{i+1}} selected. Departure from {{listItem.originCity}} to {{listItem.destinationCity}} on {{listItem.departureDateDisplay}} and Return from {{listItem.destinationCity}} to {{listItem.originCity}} on {{listItem.returnDateDisplay}} for just {{listItem.price.amount}} Euros. Book now only {{listItem.seatAvailability}} seats available." *ngFor="let listItem of displayData;let i=index" class="offerList__item d-flex">
+
+      
+        <div class="offerList_prizeSeat">
+          <div class="offerList__seats">
+            <i class="offerList__seatIcon small material-icons">airline_seat_recline_extra</i>
+          <span class="offerList__seatNum">- {{listItem.seatAvailability}}</span>
+        </div>
+        <div class="offerList__offerPrize">
+          <i class="offerList__currency small material-icons">euro_symbol</i>
+            <span class="offerList__cost">{{listItem.price.amount}}</span>
+        </div>
+        </div>
+      
+        <div class="offer__data d-flex">
+          <div class="offerList__originBox text-left">
+            <h2 class="offerList__origin offerList--city m-0">{{listItem.origin}}</h2>
+            <p class="offerList__originDate offerList--date m-0">{{listItem.departureDateDisplay}}</p>
+          </div>
+          <div class="offerList__icon">
+            <i class="offerList__matIcon small material-icons">swap_horiz</i>
+            </div>
+            <div class="offerList__destinationBox text-right">
+              <h2 class="offerList__destination offerList--city m-0">{{listItem.destination}}</h2>
+              <p class="offerList__departDate offerList--date m-0">{{listItem.returnDateDisplay}}</p>
+            </div>
+        </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+  <div class="sortFilterMobile" (click)="openMobFilterModal()">
+    <div class="sortFilterMobile__box">
+      <i class="sortFilterMobile__filterIco small material-icons">filter_list</i>
+      <span>Filter</span>
+    </div>
+  </div>
+
+  <jw-modal id="mobFilterModal" class="mobFilter">
+    <span class="mobFilter__closeBox" (click)="closeMobFilterModal('mobFilterModal');"><i class="mobFilter__closeIcon small material-icons">close</i></span>
+    <h1 class="mobFilter__heading text-center">Filters</h1>
+    <div class="mobFilter__filterBy">
+      <form [formGroup]="filterInputsMobile">
+        <label class="mobFilter__label origin--label" tabindex="0" aria-label="Select Origin City Use Up and down arrow key to select"  >Origin City</label>
+      <tag-input class="sortFilterMobTagOrigin"  formControlName="origin" [separatorKeyCodes]="[32,9]" placeholder="Filter By Origin" (onAdd)="filterData($event,'mobile')" (onRemove)="filterData($event,'mobile')">
+        <tag-input-dropdown class="test"
+          [autocompleteItems]="originCity"
+          [showDropdownIfEmpty]="true"
+          [dynamicUpdate]="false"
+          [keepOpen]="false"
+          
+        >
+        </tag-input-dropdown>
+      </tag-input>
+
+      <label class="mobFilter__label destinarion--label" tabindex="0" aria-label="Select Destination City Use Up and down arrow key to select">Destination City</label>
+      <tag-input class="sortFilterMobTagDestination"  formControlName="destination" [separatorKeyCodes]="[32,9]" placeholder="Filter By Destination" (onAdd)="filterData($event,'mobile')" (onRemove)="filterData($event,'mobile')">
+        <tag-input-dropdown
+          [autocompleteItems]="destinationCity"
+          [showDropdownIfEmpty]="true"
+          [dynamicUpdate]="false"
+          [keepOpen]="false"
+        >
+        </tag-input-dropdown>
+      </tag-input>
+
+    </form>
+    </div>
+    <button class="mobFilter__doneBtn btn btn-light" (click)="closeMobFilterModal('mobFilterModal')">Done</button>
+  </jw-modal>
+
+</div>
+
+

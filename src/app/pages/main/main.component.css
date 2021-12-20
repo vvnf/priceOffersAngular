@@ -1,0 +1,305 @@
+.header{
+    max-height: 65px;
+    background: #c6d6f3;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 1px 8px #888888;
+    position: relative;
+    z-index: 3;
+    opacity: 0.9;
+    max-width: 100%;
+    min-height: 65px;
+}
+.header.header--scrolled {
+    position: fixed;
+    background: #c6d6f3;
+}
+.header__brandingLogo{
+    border-radius: 50%;
+    background: #ffffff;
+    width: 57px;
+    height: 57px;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    margin: 4px;
+    align-items: center;
+    box-shadow: 0px 0px 3px 0px inset;
+    box-shadow: inset 0px 0px 5px #ccd5f4;
+    border: 1px #94aaed solid;
+}
+
+.header__brandImg{
+    min-width: 45px;
+    max-height: 45px;
+}
+
+.header__usrProfile{
+    display: inline-flex;
+    align-items: center;
+}
+
+.header__avatar.material-icons{
+    color: #3359d2;
+    font-size: 40px;
+}
+
+.header__languageSelectorImg{
+    width: 30px;
+}
+.header__languageSelectorBox{
+    padding-right: 15px;
+}
+
+.mainBanner__bannerContainer{
+    position: relative;
+}
+
+.mainBanner__bannerContainer:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #d4e2fb, transparent),linear-gradient(to bottom, #9b9b9b40, #9b9b9b40);
+}
+
+.mainBanner__bannerImg{
+    max-height: 320px;
+    min-width: 100%;
+    object-fit: cover;
+    object-position: bottom;
+}
+
+.mainBanner__content{
+    display: inline-block;
+    position: absolute;
+    top: 5%;
+    z-index: 1;
+    left: 0;
+    color: #484848;
+}
+
+.custom--shadow{
+    text-shadow: 1px 1px 2px #a8acbd;
+}
+.mainBanner__content .mainBanner--titleStyle{
+    font-family: inherit;
+}
+
+.mainBanner__subTitle{
+    font-size: 16px;
+    width: 60%;
+}
+
+.bookingWidget__bwContainer{
+    background: #e8eff9d1;
+    border-radius: 5px;
+    color: #496ad7;
+    box-shadow: 0px 1px 8px #888888;
+}
+
+.bookingWidget__bwContainer .bookingWidget--item{
+    display: flex;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+    word-break: break-all;
+    flex-flow: column;
+}
+.border--left{
+    border-left: 0.1rem solid #ccd6e3;
+}
+.border--right{
+    border-right: 0.1rem solid #ccd6e3;
+}
+.border--top{
+    border-top: 0.1rem solid #ccd6e3;
+}
+.border--bottom{
+    border-bottom: 0.1rem solid #ccd6e3;
+}
+
+.bookingWidget{
+    position: relative;
+    top:-60px;
+    
+}
+
+.sliderTeaser__box{
+    overflow-x: scroll;
+    border-spacing:25px;
+}
+
+.sliderTeaser{
+    margin-top:-50px
+}
+.sliderTeaser__teaserItem{
+    height: 100px;
+    border-radius: 3px;
+    background: #dde6f1;
+    box-shadow: 0 2px 4px 2px rgb(0 0 0 / 10%);
+    display: table-cell;
+    min-width: 100px;
+    border: 1px #4d6cd4 solid;
+}
+
+.sliderTeaser__teaserItemBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.privilegeClub__box{
+    position: relative;
+    text-align:center;
+    
+    background-image: url("/assets/images/bgPattern.png"), linear-gradient(#000, #000);
+    background-image: url("/assets/images/bgPattern.png"), -webkit-gradient(linear, left top, left bottom, from(#000), to(#000));
+    background-image: url("/assets/images/bgPattern.png"), -moz-linear-gradient(top, #000, #000);
+    height: 200px;
+}
+
+.privilegeClub__img{
+    width: auto;
+    height: 75px;
+    z-index: 2;
+    position: relative;
+    top: 3px;
+}
+
+.privilegeClub__box:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #282828, #00000061),linear-gradient(to bottom, #9b9b9b40, #9b9b9b40);
+    left: 0;
+}
+
+.privilegeClub__text {
+    position: relative;
+}
+
+.privilegeClub_getOffer{
+    position: relative;
+    width:100%;
+}
+
+/*Desktop CSS*/
+@media (min-width:769px) {
+    .header{
+        min-height: 85px;
+        max-height: 85px;
+    }
+
+    .header__brandingLogo{
+        width: 77px;
+        height: 77px;
+    }
+
+    .header__brandImg{
+        min-width: 65px;
+        max-height: 65px;
+    }
+    .container {
+        padding: 0 30px;
+    }
+    .header__languageSelectorBox{
+        padding-right: 30px;
+    }
+
+    .header__avatar.material-icons {
+        font-size: 55px;
+    }
+
+    .mainBanner__bannerImg{
+        max-height: 550px;
+    }
+
+    .mainBanner__content{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        top: 0;
+        justify-content: center;
+    }
+
+    .mainBanner__title.mainBanner--titleStyle {
+        margin-bottom: 2rem;
+    }
+    .bookingWidget{
+        top:-50px;
+    }
+    .bookingWidget__bwContainer{
+        display: flex;
+        width: 100%;
+    }
+    .bookingWidget--desktopDisplay{
+        width: 50%;
+    }
+
+    .bookingWidget__bwContainer .bookingWidget--item{
+        width: 50%;
+        border:0.1rem solid #ccd6e3;
+        height: 100px;
+    }
+    .sliderTeaser__box{
+        display: flex;
+        justify-content: space-evenly;
+        margin: 30px 0;
+    }
+
+    .privilegeClub__box{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 100%;
+        height: 300px;
+        padding: 0 6%;
+    }
+
+    .privilegeClub__img{
+        height: 150px;
+    }
+
+    .privilegeClub__content {
+        width: 50%;
+        text-align: left;
+    }
+
+    .privilegeClub_getOffer{
+        width: 150px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px){/*ipad sepcific*/
+    .privilegeClub__box{
+        max-width: 100%;
+    }
+
+    .privilegeClub__box{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 100%;
+        height: 300px;
+        padding: 0 6%;
+    }
+
+    .privilegeClub__img{
+        height: 150px;
+    }
+
+    .privilegeClub__content {
+        width: 50%;
+        text-align: left;
+    }
+
+    .privilegeClub_getOffer{
+        width: 150px;
+    }
+}
